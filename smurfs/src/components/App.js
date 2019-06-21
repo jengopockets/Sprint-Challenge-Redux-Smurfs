@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {getSmurfs,deleteSmurf} from "../actions";
 import SmurfList from "./SmurfList";
 import Input from "./Input";
-import smurf from './smurf';
+import Smurf from './smurf';
 
 /*
  to wire this component up you're going to need a few things.
@@ -37,4 +37,4 @@ const mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps,{getSmurfs,deleteSmurf}) (App);
+export default connect(mapStateToProps,{getSmurfs}) (App);
