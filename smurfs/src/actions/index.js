@@ -44,7 +44,7 @@ export const addSmurf = (index) => (dispatch) => {
     return false
   })
 }
-export const deleteSmurf = (index) => (dispatch) => {
+export const deleteSmurf = (smurf) => (dispatch) => {
   dispatch ({type: DELETING})
   axios
   .delete (`http://localhost:3333/smurfs/${smurf}`)
