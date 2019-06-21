@@ -24,16 +24,16 @@ class App extends Component {
       <div className="App">
         <h1>Smurf Turf</h1>
         <Input />
-        <SmurfList delete={this.deleteItem} smurf={this.props.smurfs}/>
+        <SmurfList delete={this.deleteSmurf} smurfs={this.props.smurfs}/>
       </div>
     );
   }
 }
 const mapStateToProps = (state) => {
   return{
-    smurfs:state.smurfs,
-    fetching:state.fetching,
-    error:state.error
+    smurfs:state.smurfReducer.smurfs,
+    fetching:state.smurfReducer.fetching,
+    error:state.smurfReducer.error
     
   }
 }

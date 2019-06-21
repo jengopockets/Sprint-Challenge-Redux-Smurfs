@@ -6,7 +6,7 @@ import { FETCHING, SUCCESS, ADDING, DELETING, ERROR } from '../actions'
 
  const initialState = {
    smurfs: [],
-   fetchingSmurfs: false,
+   fetching: false,
    addingSmurf: false,
    updatingSmurf: false,
    deletingSmurf: false,
@@ -30,7 +30,7 @@ export const smurfReducer = ( state = initialState, action) => {
     case DELETING:
       return {...state, fetching:true};
     case SUCCESS:
-      return {...state, smurfs:[...state.smurfs, ...action.payload], fetching:false};
+      return {...state, smurfs:action.payload, fetching:false};
     case ERROR:
       return {...state, error:action.payload, fetching:false};
     default:
