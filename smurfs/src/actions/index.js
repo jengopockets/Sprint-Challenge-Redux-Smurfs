@@ -44,10 +44,10 @@ export const addSmurf = (index) => (dispatch) => {
     return false
   })
 }
-export const deleteSmurf = (smurf) => (dispatch) => {
+export const deleteSmurf = (id) => (dispatch) => {
   dispatch ({type: DELETING})
   axios
-  .delete (`http://localhost:3333/smurfs/${smurf}`)
+  .delete (`http://localhost:3333/smurfs/${id}`)
   .then (response => {
     dispatch({type: SUCCESS, payload : response.data});
     return true
