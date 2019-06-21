@@ -24,10 +24,18 @@ class App extends Component {
       <div className="App">
         <h1>Smurf Turf</h1>
         <Input />
-        <SmurfList delete={this.deleteItem} smurf={this.props.smurf}/>
+        <SmurfList delete={this.deleteItem} smurf={this.props.smurfs}/>
       </div>
     );
   }
 }
+const mapStateToProps = (state) => {
+  return{
+    smurfs:state.smurfs,
+    fetching:state.fetching,
+    error:state.error
+    
+  }
+}
 
-export default App;
+export default connect(mapStateToProps,{getSmurfs,deleteSmurf}) (App);
