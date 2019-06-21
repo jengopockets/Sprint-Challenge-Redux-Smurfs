@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {getSmurfs,deleteSmurf} from "../actions";
 import SmurfList from "./SmurfList";
 import Input from "./Input";
+import smurf from './smurf';
 
 /*
  to wire this component up you're going to need a few things.
@@ -15,16 +16,12 @@ class App extends Component {
   componentDidMount(){
     this.props.getSmurfs();
   }
-  deleteItem = (e, index) => {
-    e.preventDefault()
-    this.props.deleteSmurf(index)
-  }
   render() {
     return (
       <div className="App">
         <h1>Smurf Turf</h1>
         <Input />
-        <SmurfList delete={this.deleteSmurf} smurfs={this.props.smurfs}/>
+        <SmurfList smurfs={this.props.smurfs}/>
       </div>
     );
   }
@@ -37,5 +34,7 @@ const mapStateToProps = (state) => {
     
   }
 }
+
+
 
 export default connect(mapStateToProps,{getSmurfs,deleteSmurf}) (App);

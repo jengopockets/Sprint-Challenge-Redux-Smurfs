@@ -28,7 +28,7 @@ export const smurfReducer = ( state = initialState, action) => {
     case ADDING:
       return {...state, fetching:true};
     case DELETING:
-      return {...state, fetching:true};
+      return {smurfs: state.smurfs.filter(smurf => smurf.id !== action.payload)};
     case SUCCESS:
       return {...state, smurfs:action.payload, fetching:false};
     case ERROR:
