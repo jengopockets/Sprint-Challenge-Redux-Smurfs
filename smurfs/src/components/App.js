@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from "react-redux";
 import {getSmurfs,deleteSmurf} from "../actions";
+import SmurfList from "./SmurfList";
+import Input from "./Input";
 
 /*
  to wire this component up you're going to need a few things.
@@ -21,6 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Smurf Turf</h1>
+        <Input />
+        <SmurfList delete={this.deleteItem} smurf={this.props.smurf}/>
       </div>
     );
   }

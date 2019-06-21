@@ -1,4 +1,4 @@
-import { FETCHING, SUCCESS, FAILURE, ADDING, DELETING, ERROR } from '../actions'
+import { FETCHING, SUCCESS, ADDING, DELETING, ERROR } from '../actions'
 /*
   Be sure to import in all of the action types from `../actions`
 */
